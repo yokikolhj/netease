@@ -3,11 +3,11 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
+        <groupId>com.shirly.netease</groupId>
         <artifactId>netease</artifactId>
-        <groupId>com.shirly</groupId>
-        <version>1.0-SNAPSHOT</version>
+        <version>1.0.0</version>
     </parent>
-    <groupId>com.shirly</groupId>
+    <groupId>com.shirly.master</groupId>
     <artifactId>netease-master</artifactId>
     <version>1.0.0</version>
     <name>netease-master</name>

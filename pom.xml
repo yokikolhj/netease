@@ -9,13 +9,13 @@
         <version>2.2.1.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.shirly</groupId>
+    <groupId>com.shirly.netease</groupId>
     <artifactId>netease</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0.0</version>
     <modules>
         <module>netease-master</module>
         <module>jdbc-spring-boot-starter</module>
-        <module>jdbc-core</module>
+        <module>jdbc-spring-boot-autoconfigure</module>
     </modules>
     <packaging>pom</packaging>
 
