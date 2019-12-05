@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -20,6 +21,12 @@ public class UserService {
     public Map<String, Object> find(Integer id) {
         String sql = "select * from jpa_user where id=" + id;
         Map<String, Object> result = jdbcTemplate.queryForMap(sql);
+        return result;
+    }
+
+    public List<Map<String, Object>> connectMyCat() {
+        String sql = "SHOW TABLES";
+        List<Map<String, Object>> result = jdbcTemplate.queryForList(sql);
         return result;
     }
 }

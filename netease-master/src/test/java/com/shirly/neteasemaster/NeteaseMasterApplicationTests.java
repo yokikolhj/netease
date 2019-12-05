@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.util.List;
 import java.util.Map;
 
 @RunWith(SpringRunner.class)
@@ -32,4 +33,10 @@ class NeteaseMasterApplicationTests {
         System.out.println(result);
     }
 
+    @Test
+    void testMyCat() {
+        System.out.println("连接mycat查找");
+        List<Map<String, Object>> result = userService.connectMyCat();
+        System.out.println(result);
+    }
 }
