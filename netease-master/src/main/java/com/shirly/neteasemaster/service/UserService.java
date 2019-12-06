@@ -29,4 +29,5 @@ public class UserService {
         List<Map<String, Object>> result = jdbcTemplate.queryForList(sql);
         return result;
     }
+    //观察者模式：定义对象间一对多的依赖关系，当一个对象的状态发送改变时，所有依赖于它的对象都得到**通知**并被自动更新
 }

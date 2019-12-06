@@ -16,6 +16,7 @@
         <module>netease-master</module>
         <module>jdbc-spring-boot-starter</module>
         <module>jdbc-spring-boot-autoconfigure</module>
+        <module>spring-mvc</module>
     </modules>
     <packaging>pom</packaging>
 
