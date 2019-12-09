@@ -1,0 +1,3 @@
+redis-cli.exe --eval C:\workspace\MyProject\shirly\netease\netease-master\src\main\resources\lua\lock.lua key value , 5000
+redis-cli.exe --eval C:\workspace\MyProject\shirly\netease\netease-master\src\main\resources\lua\unlock.lua key value
+https://www.cnblogs.com/yanghuahui/p/3697996.html
