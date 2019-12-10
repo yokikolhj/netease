@@ -2,7 +2,9 @@ package com.shirly.neteasemaster;
 
 import com.shirly.neteasemaster.function.design.order.OrderService;
 import com.shirly.neteasemaster.function.design.sale.SaleService;
-import com.shirly.neteasemaster.service.UserService;
+import com.shirly.neteasemaster.function.jdbc_starter.UserService;
+import com.shirly.neteasemaster.function.transaction_annotation.pojo.User;
+import com.shirly.neteasemaster.function.transaction_annotation.service.UserService_Transaction;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +12,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.ApplicationContext;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.sql.SQLException;
 import java.util.List;
 import java.util.Map;
 
@@ -28,6 +31,9 @@ class NeteaseMasterApplicationTests {
 
     @Autowired
     SaleService saleService;
+
+    @Autowired
+    UserService_Transaction userService_transaction;
 
     @Test
     void contextLoads() {
@@ -65,5 +71,18 @@ class NeteaseMasterApplicationTests {
         double normal = saleService.sale("normal", 100);
         double svip = saleService.sale("svip", 100);
         System.out.println("vip:" + vip + " normal:" + normal + " svip:" + svip);
+    }
+
+    @Test
+    void testInsertUser() {
+        User user = new User();
+        user.setEmail("xxx@xxx");
+        user.setLastName("shirly");
+        userService_transaction.insertUser(user);
+    }
+
+    @Test
+    void testDeleteUser() throws SQLException {
+        userService_transaction.deleteUser(3);
     }
 }

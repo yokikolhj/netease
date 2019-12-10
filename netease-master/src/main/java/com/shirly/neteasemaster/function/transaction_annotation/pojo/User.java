@@ -1,11 +1,11 @@
-package com.shirly.neteasemaster.dao;
+package com.shirly.neteasemaster.function.transaction_annotation.pojo;
 
 /**
  * @author shirly
  * @version 1.0
  * @date 2019/12/3 15:58
  */
-public class JpaUser {
+public class User {
     private Integer id;
     private String lastName;
     private String email;
