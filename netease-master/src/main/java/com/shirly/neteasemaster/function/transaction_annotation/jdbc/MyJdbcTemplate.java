@@ -11,7 +11,7 @@ import java.sql.Statement;
  * @author shirly
  * @version 1.0
  * @date 2019/12/10 14:52
- * @discription 封装事务
+ * @description 封装事务
  *   设计模式的体现 spring（***Template）、jdk(AQS模板方法模式)
  */
 @Component

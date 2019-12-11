@@ -11,7 +11,7 @@ import java.sql.SQLException;
  * @author shirly
  * @version 1.0
  * @date 2019/12/10 15:06
- * @discription 为实现事存勋在
+ * @description 为实现事存勋在
  */
 @Component // spring默认创建一个单例
 public class MyTransactionManager {

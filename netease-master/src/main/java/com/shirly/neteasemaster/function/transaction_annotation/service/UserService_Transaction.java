@@ -18,7 +18,7 @@ import java.sql.Statement;
  * @author shirly
  * @version 1.0
  * @date 2019/12/10 11:23
- * @discription Spring事务注解示例
+ * @description Spring事务注解示例
  */
 @Service
 public class UserService_Transaction {
