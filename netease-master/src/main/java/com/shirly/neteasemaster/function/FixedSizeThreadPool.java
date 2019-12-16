@@ -74,7 +74,11 @@ public class FixedSizeThreadPool {
 
     // 提供任务
     private boolean submit(Runnable task) {
-        return this.taskQueue.offer(task);
+        if (this.working) {
+            return this.taskQueue.offer(task);
+        } else {
+            return false;
+        }
     }
 
     // 关闭线程池
@@ -105,11 +109,13 @@ public class FixedSizeThreadPool {
             });
         }
         // 等待其他线程执行完
-        while (true) {
+        // 1.任务不能提交 2.执行完队列中所有任务 3.此时不能用take()去阻塞而应该用poll() 4.已经阻塞的线程中断
+        pool.shutdown();
+        /*while (true) {
             if (0 == pool.taskQueue.size()) {
                 pool.shutdown();
                 break;
             }
-        }
+        }*/
     }
 }
