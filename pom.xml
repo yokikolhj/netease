@@ -17,6 +17,7 @@
         <module>jdbc-spring-boot-starter</module>
         <module>jdbc-spring-boot-autoconfigure</module>
         <module>spring-mvc</module>
+        <module>transaction-dispatch-service</module>
     </modules>
     <packaging>pom</packaging>
 
