@@ -1,7 +1,7 @@
 package com.shirly.transaction.order;
 
+import com.alibaba.fastjson.JSONObject;
 import com.shirly.transaction.order.service.OrderService;
-import net.minidev.json.JSONObject;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
