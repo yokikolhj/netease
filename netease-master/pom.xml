@@ -88,6 +88,13 @@
             <version>1.2.13</version>
         </dependency>
 
+        <!-- spring集成shiro -->
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-spring</artifactId>
+            <version>1.4.2</version>
+        </dependency>
+
     </dependencies>
 
     <description>Demo project for Spring Boot</description>

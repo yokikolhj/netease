@@ -5,6 +5,7 @@ import com.shirly.transaction.dispatch.service.DispatchService;
 import com.alibaba.fastjson.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.amqp.rabbit.annotation.RabbitHandler;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.amqp.support.AmqpHeaders;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +26,8 @@ public class OrderDispatchConsumer {
     DispatchService dispatchService;
 
     // spring集成，方法触发spring
-    @RabbitListener(queues = "orderQueue") // 远程rabbitmq服务器，rabbitmq客服端封装
+    @RabbitListener(queues = "orderQueue") // 远程rabbitmq服务器，rabbitmq客服端封装,监听队列
+    @RabbitHandler //handler指定对消息的处理方法
     public void messageConsumer(String message, Channel channel, @Header(AmqpHeaders.DELIVERY_TAG) long tag)
             throws Exception {
         try {

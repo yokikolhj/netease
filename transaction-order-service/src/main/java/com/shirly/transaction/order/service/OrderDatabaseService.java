@@ -38,6 +38,6 @@ public class OrderDatabaseService {
      * @throws Exception
      */
     private void saveLocalMessage(JSONObject orderInfo) throws Exception {
-
+        rabbitTemplate.convertAndSend("orderQueue", orderInfo);
     }
 }

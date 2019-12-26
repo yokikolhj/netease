@@ -4,8 +4,10 @@ import com.github.pagehelper.PageHelper;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
+import org.springframework.web.filter.DelegatingFilterProxy;
 
 import java.util.Properties;
 
@@ -28,5 +30,15 @@ public class NeteaseMasterApplication {
         properties.setProperty("dialect", "mysql"); // 配置mysql数据库方言
         pageHelper.setProperties(properties);
         return pageHelper;
+    }
+
+    // 配置shiro的web filter,将servlet filter交给spring委托代理
+    @Bean
+    public FilterRegistrationBean<DelegatingFilterProxy> getShiroFilter() {
+        FilterRegistrationBean<DelegatingFilterProxy> frb = new FilterRegistrationBean<>(
+                new DelegatingFilterProxy("shiroFilter"));
+        frb.addUrlPatterns("/");
+        frb.addInitParameter("targetFilterLifecycle", "true");
+        return frb;
     }
 }
