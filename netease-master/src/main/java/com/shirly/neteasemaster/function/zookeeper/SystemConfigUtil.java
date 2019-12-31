@@ -5,6 +5,7 @@ import org.apache.curator.framework.CuratorFrameworkFactory;
 import org.apache.curator.framework.recipes.cache.TreeCache;
 import org.apache.curator.framework.recipes.cache.TreeCacheEvent;
 import org.apache.curator.retry.RetryOneTime;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Component;
@@ -23,10 +24,11 @@ import java.util.Properties;
 @Component
 public class SystemConfigUtil {
 
-    Properties remoteProperties = new Properties(); // 本质就是hashtable，缓存远程服务器的配置信息
+    private Properties remoteProperties = new Properties(); // 本质就是hashtable，缓存远程服务器的配置信息
 
     // 保证统一性
-    Environment environment; // 操作系统、jvm...配置参数都可以通过它获取
+    @Autowired
+    private Environment environment; // 操作系统、jvm...配置参数都可以通过它获取
 
     // 获取配置项的值
     public String getProperties(String key) {
@@ -47,7 +49,7 @@ public class SystemConfigUtil {
     // 启动系统的时候读取远程配置中心中的系统配置信息表
     @PostConstruct
     public void init() {
-        CuratorFramework zkClient = new CuratorFrameworkFactory.newClient(zkUrl, new RetryOneTime(1000));
+        CuratorFramework zkClient = CuratorFrameworkFactory.newClient(zkUrl, new RetryOneTime(1000));
         zkClient.start(); // 启动和zookeeper的连接
 
         try {

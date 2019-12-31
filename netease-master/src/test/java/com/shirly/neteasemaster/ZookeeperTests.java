@@ -1,10 +1,12 @@
 package com.shirly.neteasemaster;
 
+import com.shirly.neteasemaster.function.zookeeper.SystemConfigUtil;
 import org.apache.curator.framework.CuratorFramework;
 import org.apache.curator.framework.CuratorFrameworkFactory;
 import org.apache.curator.retry.RetryOneTime;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
@@ -21,6 +23,9 @@ import java.util.List;
 @SpringBootTest
 public class ZookeeperTests {
 
+    @Autowired
+    SystemConfigUtil config;
+
     @Value("${config.zookeeper.url}")
     String zkUrl;
 
@@ -29,7 +34,7 @@ public class ZookeeperTests {
 
     @Test
     public void zk() throws Exception {
-        CuratorFramework zkClient = new CuratorFrameworkFactory.newClient(zkUrl, new RetryOneTime(1000));
+        CuratorFramework zkClient = CuratorFrameworkFactory.newClient(zkUrl, new RetryOneTime(1000));
         zkClient.start(); // 启动和zookeeper的连接
 
         // 获取节点对应的值
@@ -39,9 +44,10 @@ public class ZookeeperTests {
         // 获取节点下的子节点值，每一个子节点代表一项配置
         List<String> strings = zkClient.getChildren().forPath("/" + nodeName);
         System.out.println("pay-server-config节点下有这些子节点");
-        /*strings.forEach(s -> {
+        strings.forEach(s -> {
             System.out.println(s);
-        });*/
-        strings.forEach(System.out::println);
+            System.out.println(config.getProperties(s));
+        });
+
     }
 }
