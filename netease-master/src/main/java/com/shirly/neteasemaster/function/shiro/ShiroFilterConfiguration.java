@@ -25,9 +25,9 @@ import java.util.Map;
  * @description shiro过滤器
  */
 @Configuration //配置类，用来取代spring.xml那一堆<beans></beans>头文件
-public class ShiroFilter {
+public class ShiroFilterConfiguration {
 
-    @Bean
+    @Bean("shiroFilter")
     public ShiroFilterFactoryBean shiroFilterFactoryBean(SecurityManager manager) {
         ShiroFilterFactoryBean shiroFilterFactoryBean = new ShiroFilterFactoryBean();
         // 必须设置

@@ -1,22 +1,29 @@
 package com.shirly.neteasemaster;
 
 import com.github.pagehelper.PageHelper;
-import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
+import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
+import org.springframework.scheduling.annotation.EnableAsync;
+import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.web.filter.DelegatingFilterProxy;
 
 import java.util.Properties;
 
 @SpringBootApplication
 @EnableAspectJAutoProxy // 开启AOP
+@EnableAsync //开启异步支持
+@EnableScheduling //开启定时任务
 public class NeteaseMasterApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(NeteaseMasterApplication.class, args);
+        ConfigurableApplicationContext context = SpringApplication.run(NeteaseMasterApplication.class, args);
+        /*TimeUtil.SECONDS.sleep(30L);
+        // 容器自动关闭
+        context.close();*/
     }
 
     // 配置mybatis的分页插件pageHelper

@@ -47,7 +47,7 @@ public class SystemConfigUtil {
     String nodeName;
 
     // 启动系统的时候读取远程配置中心中的系统配置信息表
-    @PostConstruct
+//    @PostConstruct -- 使用注解开启
     public void init() {
         CuratorFramework zkClient = CuratorFrameworkFactory.newClient(zkUrl, new RetryOneTime(1000));
         zkClient.start(); // 启动和zookeeper的连接
