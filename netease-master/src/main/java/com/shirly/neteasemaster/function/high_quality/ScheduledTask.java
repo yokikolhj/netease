@@ -16,7 +16,7 @@ public class ScheduledTask {
     private int count =0;
 
     // 容器启动后开始每隔两秒钟执行一次
-    @Scheduled(fixedRate = 2000L)
+//    @Scheduled(fixedRate = 2000L)
     public void work() {
         System.out.println("第" + (++count) + "次执行at-" + new Date());
     }

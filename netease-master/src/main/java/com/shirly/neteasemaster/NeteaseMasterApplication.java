@@ -1,6 +1,7 @@
 package com.shirly.neteasemaster;
 
 import com.github.pagehelper.PageHelper;
+import com.shirly.neteasemaster.function.aop.service.SPAService;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
@@ -21,9 +22,14 @@ public class NeteaseMasterApplication {
 
     public static void main(String[] args) {
         ConfigurableApplicationContext context = SpringApplication.run(NeteaseMasterApplication.class, args);
+
         /*TimeUtil.SECONDS.sleep(30L);
         // 容器自动关闭
         context.close();*/
+
+        SPAService spa = context.getBean(SPAService.class);
+        spa.aromaOilMassage("shirly");
+        spa.aromaOilMassage("li");
     }
 
     // 配置mybatis的分页插件pageHelper

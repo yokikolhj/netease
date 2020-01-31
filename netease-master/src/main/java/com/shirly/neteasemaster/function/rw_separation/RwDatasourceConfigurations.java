@@ -18,7 +18,7 @@ import javax.sql.DataSource;
  * @Date 2020/1/16 16:06
  * @Description
  */
-@Configuration //配置类，用来取代spring.xml那一堆<beans></beans>头文件
+//@Configuration //配置类，用来取代spring.xml那一堆<beans></beans>头文件
 public class RwDatasourceConfigurations {
 
     /**
