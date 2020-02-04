@@ -18,6 +18,8 @@
         <module>jdbc-spring-boot-autoconfigure</module>
         <module>spring-mvc</module>
         <module>transaction-dispatch-service</module>
+        <module>tomcat-shirly</module>
+        <module>tomcat-servlet-demo</module>
     </modules>
     <packaging>pom</packaging>
 
