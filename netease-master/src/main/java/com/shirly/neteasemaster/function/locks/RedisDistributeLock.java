@@ -10,7 +10,8 @@ import java.util.Collections;
  * @version 1.0
  * @date 2019/12/8 0:45
  */
-public class RedisDistributeLock {
+public class
+RedisDistributeLock {
     private static final long SLEEP_PER = 5; // 获取锁时睡眠等待时间片，毫秒
     private static final Long RELEASE_SUCCESS = 1L;
     private static final String key = "lock_key";
