@@ -1,0 +1,3 @@
+# AutoConfigureCache auto-configuration imports
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.shirly.eureka.client.EurekaClientAutoConfiguration

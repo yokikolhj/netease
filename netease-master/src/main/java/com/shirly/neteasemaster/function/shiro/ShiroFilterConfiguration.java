@@ -26,15 +26,18 @@ import java.util.Map;
  */
 @Configuration //配置类，用来取代spring.xml那一堆<beans></beans>头文件
 public class ShiroFilterConfiguration {
+/*
 
     @Bean("shiroFilter")
     public ShiroFilterFactoryBean shiroFilterFactoryBean(SecurityManager manager) {
         ShiroFilterFactoryBean shiroFilterFactoryBean = new ShiroFilterFactoryBean();
         // 必须设置
         shiroFilterFactoryBean.setSecurityManager(manager);
-        /*
+        */
+/*
          * 重要，设置自定义拦截器，当访问某些自定义url时，使用这个filter进行验证
-         */
+         *//*
+
         Map<String, Filter> filters = new LinkedHashMap<>();
         //如果map里面key值为authc,表示所有名为authc的过滤条件使用这个自定义的filter
         //map里面key值为myFilter,表示所有名为myFilter的过滤条件使用这个自定义的filter，具体见下方
@@ -75,11 +78,13 @@ public class ShiroFilterConfiguration {
         return shiroFilterFactoryBean;
     }
 
-    /*@Bean
+    */
+/*@Bean
     public SecurityManager securityManager(){
         DefaultWebSecurityManager securityManager =  new DefaultWebSecurityManager();
         return securityManager;
-    }*/
+    }*//*
+
 
     //配置核心安全事务管理器
     @Bean(name="securityManager")
@@ -129,5 +134,6 @@ public class ShiroFilterConfiguration {
         sourceAdvisor.setSecurityManager(manager);
         return sourceAdvisor;
     }
+*/
 
 }

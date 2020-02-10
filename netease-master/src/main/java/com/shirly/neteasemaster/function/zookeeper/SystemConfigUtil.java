@@ -18,7 +18,8 @@ import java.util.Properties;
  * @author shirly
  * @version 1.0
  * @date 2019/12/26 16:03
- * @description 数据库配置信息
+ * @description zookeeper之配置中心
+ *     数据库配置信息
  *     把配置信息放到数据库表
  */
 @Component

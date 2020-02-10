@@ -27,9 +27,9 @@ public class NeteaseMasterApplication {
         // 容器自动关闭
         context.close();*/
 
-        SPAService spa = context.getBean(SPAService.class);
+       /* SPAService spa = context.getBean(SPAService.class);
         spa.aromaOilMassage("shirly");
-        spa.aromaOilMassage("li");
+        spa.aromaOilMassage("li");*/
     }
 
     // 配置mybatis的分页插件pageHelper
@@ -46,12 +46,12 @@ public class NeteaseMasterApplication {
     }
 
     // 配置shiro的web filter,将servlet filter交给spring委托代理
-    @Bean
+    /*@Bean
     public FilterRegistrationBean<DelegatingFilterProxy> getShiroFilter() {
         FilterRegistrationBean<DelegatingFilterProxy> frb = new FilterRegistrationBean<>(
                 new DelegatingFilterProxy("shiroFilter"));
         frb.addUrlPatterns("/");
         frb.addInitParameter("targetFilterLifecycle", "true");
         return frb;
-    }
+    }*/
 }

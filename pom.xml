@@ -20,6 +20,8 @@
         <module>transaction-dispatch-service</module>
         <module>tomcat-shirly</module>
         <module>tomcat-servlet-demo</module>
+        <module>eureka-client-shirly</module>
+        <module>eureka-client-shirly-privoder</module>
     </modules>
     <packaging>pom</packaging>
 

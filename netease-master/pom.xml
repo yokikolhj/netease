@@ -134,6 +134,14 @@
             <artifactId>zkclient</artifactId>
             <version>0.11</version>
         </dependency>
+
+        <!-- eureka注册中心需要 -->
+        <!--<dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+            <version>2.2.1.RELEASE</version>
+        </dependency>-->
+
     </dependencies>
 
     <build>
