@@ -21,7 +21,7 @@
         <module>tomcat-shirly</module>
         <module>tomcat-servlet-demo</module>
         <module>eureka-client-shirly</module>
-        <module>eureka-client-shirly-privoder</module>
+        <module>eureka-client-shirly-provider</module>
     </modules>
     <packaging>pom</packaging>
 
